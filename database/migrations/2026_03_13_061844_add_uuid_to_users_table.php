@@ -10,7 +10,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->uuid('uuid')->nullable();
+            $table->uuid('uuid');
         });
 
         DB::statement('CREATE INDEX hash_users_uuid ON users USING hash (uuid)');
