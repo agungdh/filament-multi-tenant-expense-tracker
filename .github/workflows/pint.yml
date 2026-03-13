@@ -18,14 +18,11 @@ jobs:
         with:
           php-version: '8.5'
 
-      - name: Install dependencies
-        run: composer install --no-progress
+      - name: Install Node.js dependencies
+        run: npm install
 
       - name: Run Pint
         run: vendor/bin/pint --test
 
-      - name: Install blade-formatter
-        run: npm install -g blade-formatter
-
       - name: Run blade-formatter
-        run: blade-formatter --check 'resources/**/*.blade.php'
+        run: npm run lint:blade
