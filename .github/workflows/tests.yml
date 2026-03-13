@@ -39,8 +39,8 @@ jobs:
       - name: Generate key
         run: php artisan key:generate
 
-      - name: Run migrations
-        run: php artisan migrate --force
+      - name: Run migrations and seed
+        run: php artisan migrate:fresh --seed
         env:
           DB_CONNECTION: pgsql
           DB_HOST: localhost
