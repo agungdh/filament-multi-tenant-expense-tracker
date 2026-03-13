@@ -23,3 +23,9 @@ jobs:
 
       - name: Run Pint
         run: vendor/bin/pint --test
+
+      - name: Install blade-formatter
+        run: npm install -g blade-formatter
+
+      - name: Run blade-formatter
+        run: blade-formatter --check 'resources/**/*.blade.php'
