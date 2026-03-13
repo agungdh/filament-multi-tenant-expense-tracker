@@ -6,7 +6,7 @@
         "build": "vite build",
         "dev": "vite",
         "lint:blade": "blade-formatter -c 'resources/**/*.blade.php'",
-        "lint:fix:blade": "blade-formatter 'resources/**/*.blade.php'"
+        "lint:fix:blade": "blade-formatter -w 'resources/**/*.blade.php'"
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.0.0",
