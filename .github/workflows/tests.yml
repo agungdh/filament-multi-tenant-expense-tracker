@@ -10,28 +10,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
 
-    services:
-      postgres:
-        image: postgres:18
-        env:
-          POSTGRES_USER: laravel
-          POSTGRES_PASSWORD: laravel
-          POSTGRES_DB: laravel_testing
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
-
-      valkey:
-        image: valkey/valkey:8
-        ports:
-          - 6379:6379
-
     steps:
       - uses: actions/checkout@v4
+
+      - name: Setup Docker Compose
+        run: docker compose up -d postgres valkey
+
+      - name: Wait for services
+        run: sleep 10
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -59,7 +45,7 @@ jobs:
           DB_CONNECTION: pgsql
           DB_HOST: localhost
           DB_PORT: 5432
-          DB_DATABASE: laravel_testing
+          DB_DATABASE: laravel
           DB_USERNAME: laravel
           DB_PASSWORD: laravel
 
@@ -69,7 +55,7 @@ jobs:
           DB_CONNECTION: pgsql
           DB_HOST: localhost
           DB_PORT: 5432
-          DB_DATABASE: laravel_testing
+          DB_DATABASE: laravel
           DB_USERNAME: laravel
           DB_PASSWORD: laravel
 
@@ -79,3 +65,7 @@ jobs:
           CACHE_STORE: redis
           QUEUE_CONNECTION: redis
           SESSION_DRIVER: redis
+
+      - name: Stop services
+        if: always()
+        run: docker compose down
