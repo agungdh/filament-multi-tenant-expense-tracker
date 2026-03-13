@@ -21,10 +21,21 @@
 
                 :root,
                 :host {
+
+
+
+
+
+
                     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-                    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-                    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+                                --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+                                --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
                     --color-red-50: oklch(.971 .013 17.38);
+
+
+
+
+
                     --color-red-100: oklch(.936 .032 17.717);
                     --color-red-200: oklch(.885 .062 18.334);
                     --color-red-300: oklch(.808 .114 19.571);
@@ -38,10 +49,10 @@
                     --color-orange-50: oklch(.98 .016 73.684);
                     --color-orange-100: oklch(.954 .038 75.164);
                     --color-orange-200: oklch(.901 .076 70.697);
-                    --color-orange-300: oklch(.837 .128 66.29);
-                    --color-orange-400: oklch(.75 .183 55.934);
-                    --color-orange-500: oklch(.705 .213 47.604);
-                    --color-orange-600: oklch(.646 .222 41.116);
+                        --color-orange-300: oklch(.837 .128 66.29);
+                        --color-orange-400: oklch(.75 .183 55.934);
+                        --color-orange-500: oklch(.705 .213 47.604);
+                        --color-orange-600: oklch(.646 .222 41.116);
                     --color-orange-700: oklch(.553 .195 38.402);
                     --color-orange-800: oklch(.47 .157 37.304);
                     --color-orange-900: oklch(.408 .123 38.172);
