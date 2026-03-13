@@ -39,6 +39,11 @@ jobs:
           php-version: '8.5'
           extensions: pdo_pgsql, redis
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
       - name: Copy .env
         run: cp .env.example .env
 
