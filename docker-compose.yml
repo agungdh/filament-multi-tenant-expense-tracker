@@ -47,8 +47,10 @@ services:
   adminer:
     image: adminer
     container_name: filament-expense-adminer
+    environment:
+      ADMINER_DEFAULT_SERVER: postgres
     ports:
-      - "8080:8080"
+      - "8083:8080"
     depends_on:
       - postgres
 
