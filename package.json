@@ -5,6 +5,8 @@
     "scripts": {
         "build": "vite build",
         "dev": "vite",
+        "lint": "vendor/bin/pint --test && npm run lint:blade",
+        "lint:fix": "vendor/bin/pint && npm run lint:fix:blade",
         "lint:blade": "blade-formatter -c 'resources/**/*.blade.php'",
         "lint:fix:blade": "blade-formatter -w 'resources/**/*.blade.php'"
     },
